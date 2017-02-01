@@ -1,0 +1,22 @@
+{
+  "es": {
+    "default_index": "logstash-*",
+    "allow_url_parameter": false,
+    "timezone": "UTC"
+  },
+  "tail_interval_in_seconds": 10,
+  "max_buckets": 500,
+  "max_hosts": 100,
+  "max_events_to_keep_in_viewer": 5000,
+  "nested_objects" : false,
+  "default_time_range_in_days" : 0,
+  "fields" : {
+    "mapping" : {
+        "timestamp" : "@timestamp",
+        "display_timestamp" : "@timestamp",
+        "hostname" : "kubernetes.namespace_name",
+        "program": "kubernetes.labels.app",
+        "message": "log"
+    }
+  }
+}
