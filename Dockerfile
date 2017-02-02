@@ -24,7 +24,8 @@ RUN set -x \
 	&& rm -f /usr/share/kibana-${KIBANA_VERSION}.tar.gz
 
 ENV PATH /usr/share/kibana/bin:$PATH
-RUN /usr/share/kibana/bin/kibana-plugin install https://github.com/sivasamyk/logtrail/releases/download/0.1.7/logtrail-5.x-0.1.7.zip
+RUN /usr/share/kibana/bin/kibana-plugin install https://github.com/sivasamyk/logtrail/releases/download/0.1.6/logtrail-5.x-0.1.6.zip
+
 ADD ./config/logtrail.json /usr/share/kibana/plugins/logtrail/logtrail.json
 
 COPY docker-entrypoint.sh /
