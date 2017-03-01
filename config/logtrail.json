@@ -1,6 +1,6 @@
 {      
   "es": {
-    "default_index": "logstash-*",
+    "default_index": "kubernetes-*",
     "allow_url_parameter": false       
   },
   "tail_interval_in_seconds": 10,
@@ -16,8 +16,8 @@
     "mapping" : {
       "timestamp" : "@timestamp",
       "display_timestamp" : "@timestamp",
-      "hostname" : "kubernetes.namespace_name",
-      "program": "kubernetes.labels.app",
+      "hostname" : "kubernetes_namespace_name",
+      "program": "kubernetes_pod_name",
       "message": "log"
     }
   }
