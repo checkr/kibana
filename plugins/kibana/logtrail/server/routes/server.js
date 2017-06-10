@@ -53,7 +53,7 @@ function convertToClientFormat(selected_config, esResponse) {
     var message = source[selected_config.fields.mapping['message']];
     //If the user has specified a custom format for message field
     if (message_format) {
-      source['message'] = escape(message)
+      source['message'] = message
       event['message'] = template(source);
     } else {
       event['message'] = escape(message);
