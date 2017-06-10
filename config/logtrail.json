@@ -16,9 +16,9 @@
     "mapping" : {
       "timestamp" : "@timestamp",
       "display_timestamp" : "@timestamp",
-      "hostname" : "kubernetes_namespace_name",
-      "program": "kubernetes_pod_name",
-      "message": "log"
+      "hostname" : "kubernetes.namespace_name",
+      "program": "kubernetes.pod_name",
+      "message": "docker.log"
     }
   }
 }  
