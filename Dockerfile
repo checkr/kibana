@@ -17,6 +17,7 @@ RUN set -x \
 		su-exec \
 		bash \
 		tini \
+    zip \
 	&& addgroup kibana \
   && adduser -S -D -G kibana -h /usr/share/kibana/ kibana \
   && chown -R kibana:kibana /usr/share/kibana \
@@ -25,8 +26,9 @@ RUN set -x \
 
 ENV PATH /usr/share/kibana/bin:$PATH
 
-ADD plugins/logtail-5.3.2.zip /opt/
-RUN /usr/share/kibana/bin/kibana-plugin install file:///opt/logtail-5.3.2.zip
+ADD plugins/ /opt/plugins
+RUN cd /opt/plugins && zip -r /opt/plugins.zip kibana/
+RUN /usr/share/kibana/bin/kibana-plugin install file:///opt/plugins.zip
 ADD ./config/logtrail.json /usr/share/kibana/plugins/logtrail/logtrail.json
 
 COPY docker-entrypoint.sh /
