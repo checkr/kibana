@@ -22,7 +22,7 @@
           "program": "kubernetes.container_name",
           "message": "docker.log"
         },
-        "message_format": "({{kubernetes.pod_name}}) {{docker.log}}"
+        "message_format": "({{{kubernetes.pod_name}}}) {{{docker.log}}}"
       }
     }  
   ]

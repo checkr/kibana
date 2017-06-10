@@ -1,7 +1,6 @@
 FROM alpine:3.5
 
 ARG KIBANA_VERSION
-ARG LOGTRAIL_RELEASE
 
 RUN set -x \
   && apk add --update openssl ca-certificates \
