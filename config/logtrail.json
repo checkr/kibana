@@ -21,8 +21,7 @@
           "hostname" : "kubernetes.namespace_name",
           "program": "kubernetes.container_name",
           "message": "docker.log"
-        },
-        "message_format": "({{{kubernetes.pod_name}}}) {{{docker.log}}}"
+        }
       }
     }  
   ]
