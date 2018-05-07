@@ -26,11 +26,6 @@ RUN set -x \
 
 ENV PATH /usr/share/kibana/bin:$PATH
 
-ADD plugins/ /opt/plugins
-RUN cd /opt/plugins && zip -r /opt/plugins.zip kibana/
-RUN /usr/share/kibana/bin/kibana-plugin install file:///opt/plugins.zip
-ADD ./config/logtrail.json /usr/share/kibana/plugins/logtrail/logtrail.json
-
 COPY docker-entrypoint.sh /
 
 EXPOSE 5601
