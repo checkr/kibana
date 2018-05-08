@@ -1,3 +1,1 @@
-# kibana
-
-+ logtrail
+# kibana proxy
