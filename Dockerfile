@@ -4,6 +4,8 @@ ARG KIBANA_VERSION
 
 RUN set -x \
   && apk add --update openssl ca-certificates \
+  && apk add --update ca-certificates wget \
+  && update-ca-certificates \
 	&& wget -O /usr/share/kibana-${KIBANA_VERSION}.tar.gz https://artifacts.elastic.co/downloads/kibana/kibana-${KIBANA_VERSION}-linux-x86_64.tar.gz \
 	&& cd /usr/share \
 	&& tar xf kibana-${KIBANA_VERSION}.tar.gz \
